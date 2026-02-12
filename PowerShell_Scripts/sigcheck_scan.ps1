@@ -1,0 +1,1 @@
+sigcheck64.exe -u -e -vt -c c:\windows\system32 | Where-Object { $_ -match '^"?Path' -or $_ -match '^"?[a-zA-Z]:\\' } | ConvertFrom-Csv | Where-Object {$_.Verified -ne 'Signed'}
